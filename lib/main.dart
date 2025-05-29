@@ -36,7 +36,33 @@ class MyHomePage extends StatelessWidget {
         centerTitle: true,
         leading: Icon(Icons.menu),
       ),
-      body: SingleChildScrollView(child: Column(children: [_widgetProfil(context)])),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // widget pour le profil
+            _widgetProfil(context),
+
+            // widget pour le les stat
+            Row(
+              children: [
+                _widgetStat(context),
+                _widgetStat(context),
+                _widgetStat(context)
+              ],
+            )
+
+            // widget pour les competences
+            Column(
+              children: [
+                _widgetSkill(context),
+                _widgetSkill(context),
+                _widgetSkill(context),
+                _widgetSkill(context)
+              ],
+            )
+          ]
+        )
+      ),
     );
   }
 
@@ -49,8 +75,8 @@ class MyHomePage extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 10),
             child: Container(
-              height: 150,
-              width: 150,
+              height: 100,
+              width: 100,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(100),
                 image: DecorationImage(
